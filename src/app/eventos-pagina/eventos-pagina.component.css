@@ -1,0 +1,8 @@
+.carousel {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Desplazamiento suave */
+  }
+  
+  .carousel div {
+    flex-shrink: 0; /* Las imágenes no se deben comprimir */
+  }

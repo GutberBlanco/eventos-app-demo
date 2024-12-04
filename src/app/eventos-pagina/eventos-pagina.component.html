@@ -1,0 +1,267 @@
+<div class="w-full px-24 pt-8">
+    <div class="relative w-full h-[500px] overflow-hidden rounded-lg">
+        <!-- Contenedor de las imágenes -->
+        <div #carousel class="absolute inset-0 flex transition-transform duration-1000 ease-in-out">
+            <div class="w-full h-[500px] flex-shrink-0 bg-contain bg-center"
+                style="background-image: url('https://sppcultura.cl/wp-content/uploads/2014/12/feria-navidad.jpg');">
+            </div>
+            <div class="w-full h-[500px] flex-shrink-0 bg-cover bg-center"
+                style="background-image: url('https://www.mpuentealto.cl/wp-content/uploads/banner_musica_pelicula.jpg');">
+            </div>
+            <div class="w-full h-[500px] flex-shrink-0 bg-contain bg-center"
+                style="background-image: url('http://agendajiwaki.lapaz.bo/wp-content/uploads/2024/11/Actividades-especiales-3-2-1.png');">
+            </div>
+            <div class="w-full h-[500px] flex-shrink-0 bg-cover bg-center"
+                style="background-image: url('https://fortalecerfamilias.org/wp-content/uploads/2024/10/Banner-Concierto-por-la-paz.png');">
+            </div>
+            <div class="w-full h-[500px] flex-shrink-0 bg-cover bg-center"
+                style="background-image: url('https://images.ctfassets.net/n1ptkpqt763u/3PUTyazrVS7NNiEVXqBpp6/9d64b35e751934b52935d7feb2ca0508/13026-MaraCund-HeroBanner_375x180px.webp');">
+            </div>
+        </div>
+
+        <!-- Controles manuales -->
+        <button #prev
+            class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+        </button>
+        <button #next
+            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 19.5L15.75 12 8.25 4.5" />
+            </svg>
+        </button>
+    </div>
+
+
+
+    <!-- Cuadro de búsqueda y botones -->
+    <div class="flex items-center justify-between mt-4 px-16">
+        <div class="flex space-x-2">
+            <input type="text" placeholder="Buscar eventos..."
+                class="border border-gray-300 rounded px-4 py-2 w-80 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            <button class="flex items-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 21l-4.35-4.35M10.5 4.5a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z" />
+                </svg>
+                Buscar
+            </button>
+        </div>
+        <div class="flex space-x-4">
+            <button
+                class="flex items-center bg-blue-500 text-white border border-blue-500 px-8 py-2 rounded hover:bg-blue-600">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 mr-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
+                </svg>
+                Filtros
+            </button>
+            <div class="relative inline-block text-left">
+                <!-- Botón principal -->
+                <button id="dropdownButton" type="button" (click)="toggleDropdown()"
+                    class="bg-blue-500 text-white border border-gray-300 px-4 py-2 rounded hover:bg-blue-600 flex items-center justify-between w-48"
+                    aria-expanded="true" aria-haspopup="true">
+                    Tipo de Evento
+                    <svg class="ml-2 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 9l-7.5 7.5L4.5 9" />
+                    </svg>
+                </button>
+
+                <!-- Dropdown menú -->
+                <div id="dropdownMenu"
+                    class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-10">
+                    <ul class="py-1 text-gray-700">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Conferencia</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Taller</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Seminario</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Webinar</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Feria</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Exposición</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Reunión</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Fiesta</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Concierto</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Otro</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Eventos recomendados -->
+    <div class="mt-8 px-14">
+        <h2 class="text-lg font-semibold mb-2">Eventos recomendados</h2>
+        <hr class="mb-4 border-gray-300" />
+        <div class="grid grid-cols-4 gap-4">
+            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden">
+                <!-- Imagen que ocupa todo el ancho y 30% del alto -->
+                <div class="w-full h-[60%] bg-contain bg-center bg-no-repeat"
+                    style="background-image: url('https://marketplace.canva.com/EAGHdfPCdAY/3/0/1131w/canva-poster-festival-musica-neon-negro-IPiOfaP2QD8.jpg'); background-size: 100% 100%;">
+                </div>
+            
+                <!-- Contenido con padding y alineación a la izquierda -->
+                <div class="p-4 flex-1">
+                    <!-- Título del evento -->
+                    <h3 class="text-lg font-semibold text-gray-800">Título del Evento</h3>
+            
+                    <!-- Fecha del evento -->
+                    <div class="flex items-center text-sm text-gray-600 mt-2">
+                        <!-- Icono de calendario -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5m7.5-1.5v1.5M3 9.75h18M4.5 6.75h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 21H4.5a2.25 2.25 0 0 1-2.25-2.25V9a2.25 2.25 0 0 1 2.25-2.25Z" />
+                        </svg>
+                        <!-- Texto de fecha -->
+                        <span>10 de diciembre, 2024</span>
+                    </div>
+            
+                    <!-- Descripción del evento -->
+                    <p class="text-sm text-gray-700 mt-2">
+                        Breve descripción del evento. Este texto puede contener hasta dos líneas.
+                    </p>
+                </div>
+            
+                <!-- Botones en la parte inferior -->
+                <div class="p-4 flex justify-end space-x-4 border-t">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver Evento</button>
+                    <button class="text-blue-500 hover:underline">Recordatorio</button>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden">
+                <!-- Imagen que ocupa todo el ancho y 30% del alto -->
+                <div class="w-full h-[60%] bg-contain bg-center bg-no-repeat"
+                    style="background-image: url('https://www.ccres.org.ar/site/wp-content/uploads/2022/08/Maraton-Afiche-A3-7-pdf.jpg'); background-size: 100% 100%;">
+                </div>
+            
+                <!-- Contenido con padding y alineación a la izquierda -->
+                <div class="p-4 flex-1">
+                    <!-- Título del evento -->
+                    <h3 class="text-lg font-semibold text-gray-800">Título del Evento</h3>
+            
+                    <!-- Fecha del evento -->
+                    <div class="flex items-center text-sm text-gray-600 mt-2">
+                        <!-- Icono de calendario -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5m7.5-1.5v1.5M3 9.75h18M4.5 6.75h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 21H4.5a2.25 2.25 0 0 1-2.25-2.25V9a2.25 2.25 0 0 1 2.25-2.25Z" />
+                        </svg>
+                        <!-- Texto de fecha -->
+                        <span>10 de diciembre, 2024</span>
+                    </div>
+            
+                    <!-- Descripción del evento -->
+                    <p class="text-sm text-gray-700 mt-2">
+                        Breve descripción del evento. Este texto puede contener hasta dos líneas.
+                    </p>
+                </div>
+            
+                <!-- Botones en la parte inferior -->
+                <div class="p-4 flex justify-end space-x-4 border-t">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver Evento</button>
+                    <button class="text-blue-500 hover:underline">Recordatorio</button>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden">
+                <!-- Imagen que ocupa todo el ancho y 30% del alto -->
+                <div class="w-full h-[60%] bg-contain bg-center bg-no-repeat"
+                    style="background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/copa-america-2024-bolivia-vs-panama-design-template-5c20021f7e23953674ff05a5e83bb419_screen.jpg?ts=1719864034'); background-size: 100% 100%;">
+                </div>
+            
+                <!-- Contenido con padding y alineación a la izquierda -->
+                <div class="p-4 flex-1">
+                    <!-- Título del evento -->
+                    <h3 class="text-lg font-semibold text-gray-800">Título del Evento</h3>
+            
+                    <!-- Fecha del evento -->
+                    <div class="flex items-center text-sm text-gray-600 mt-2">
+                        <!-- Icono de calendario -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5m7.5-1.5v1.5M3 9.75h18M4.5 6.75h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 21H4.5a2.25 2.25 0 0 1-2.25-2.25V9a2.25 2.25 0 0 1 2.25-2.25Z" />
+                        </svg>
+                        <!-- Texto de fecha -->
+                        <span>10 de diciembre, 2024</span>
+                    </div>
+            
+                    <!-- Descripción del evento -->
+                    <p class="text-sm text-gray-700 mt-2">
+                        Breve descripción del evento. Este texto puede contener hasta dos líneas.
+                    </p>
+                </div>
+            
+                <!-- Botones en la parte inferior -->
+                <div class="p-4 flex justify-end space-x-4 border-t">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver Evento</button>
+                    <button class="text-blue-500 hover:underline">Recordatorio</button>
+                </div>
+            </div>
+            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden">
+                <!-- Imagen que ocupa todo el ancho y 30% del alto -->
+                <div class="w-full h-[60%] bg-contain bg-center bg-no-repeat"
+                    style="background-image: url('https://www.uao.edu.co/wp-content/uploads/2023/10/Ingenier%C3%ADa-11.png'); background-size: 100% 100%;">
+                </div>
+            
+                <!-- Contenido con padding y alineación a la izquierda -->
+                <div class="p-4 flex-1">
+                    <!-- Título del evento -->
+                    <h3 class="text-lg font-semibold text-gray-800">Título del Evento</h3>
+            
+                    <!-- Fecha del evento -->
+                    <div class="flex items-center text-sm text-gray-600 mt-2">
+                        <!-- Icono de calendario -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5m7.5-1.5v1.5M3 9.75h18M4.5 6.75h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 21H4.5a2.25 2.25 0 0 1-2.25-2.25V9a2.25 2.25 0 0 1 2.25-2.25Z" />
+                        </svg>
+                        <!-- Texto de fecha -->
+                        <span>10 de diciembre, 2024</span>
+                    </div>
+            
+                    <!-- Descripción del evento -->
+                    <p class="text-sm text-gray-700 mt-2">
+                        Breve descripción del evento. Este texto puede contener hasta dos líneas.
+                    </p>
+                </div>
+            
+                <!-- Botones en la parte inferior -->
+                <div class="p-4 flex justify-end space-x-4 border-t">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver Evento</button>
+                    <button class="text-blue-500 hover:underline">Recordatorio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Más eventos -->
+    <div class="mt-8 px-6">
+        <h2 class="text-lg font-semibold mb-2">Más eventos</h2>
+        <hr class="mb-4 border-gray-300" />
+        <div class="grid grid-cols-4 gap-4 mb-4">
+            <div class="bg-white shadow-md rounded p-4">Card 1</div>
+            <div class="bg-white shadow-md rounded p-4">Card 2</div>
+            <div class="bg-white shadow-md rounded p-4">Card 3</div>
+            <div class="bg-white shadow-md rounded p-4">Card 4</div>
+        </div>
+        <div class="grid grid-cols-4 gap-4 mb-4">
+            <div class="bg-white shadow-md rounded p-4">Card 1</div>
+            <div class="bg-white shadow-md rounded p-4">Card 2</div>
+            <div class="bg-white shadow-md rounded p-4">Card 3</div>
+            <div class="bg-white shadow-md rounded p-4">Card 4</div>
+        </div>
+    </div>
+
+    <!-- Paginación -->
+    <div class="flex justify-center items-center mt-8 mb-4">
+        <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded-l hover:bg-gray-200">&lt; Prev</button>
+        <div class="flex space-x-2 mx-2">
+            <button class="px-4 py-2 bg-blue-500 text-white rounded">1</button>
+            <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200">2</button>
+            <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200">3</button>
+            <span class="px-4 py-2">...</span>
+            <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200">10</button>
+        </div>
+        <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded-r hover:bg-gray-200">Next &gt;</button>
+    </div>
+</div>
