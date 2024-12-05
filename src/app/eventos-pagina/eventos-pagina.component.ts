@@ -1,4 +1,5 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-eventos-pagina',
@@ -13,6 +14,7 @@ export class EventosPaginaComponent implements AfterViewInit {
   
   currentIndex = 0;
   totalSlides = 0;
+  constructor(private router: Router) {}
 
   ngAfterViewInit() {
     // Acceder a los elementos del carrusel y obtener el número de slides
@@ -47,5 +49,8 @@ export class EventosPaginaComponent implements AfterViewInit {
     if (dropdownMenu) {
       dropdownMenu.classList.toggle('hidden');
     }
+  }
+  irADetallesEvento() {
+    this.router.navigate(['/detalles-evento-a']);
   }
 }

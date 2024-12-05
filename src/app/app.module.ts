@@ -7,13 +7,17 @@ import { ListarComponent } from './eventos/listar/listar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EventosPaginaComponent } from './eventos-pagina/eventos-pagina.component';
+import { DetallesEventoAComponent } from './pages/detalles-evento-a/detalles-evento-a.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarComponent,
     NavbarComponent,
-    EventosPaginaComponent
+    EventosPaginaComponent,
+    DetallesEventoAComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
