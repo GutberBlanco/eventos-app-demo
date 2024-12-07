@@ -99,7 +99,7 @@
         <h2 class="text-lg font-semibold mb-2">Eventos recomendados</h2>
         <hr class="mb-4 border-gray-300" />
         <div class="grid grid-cols-4 gap-4">
-            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden">
+            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden transform transition-all duration-300 hover:scale-105">
                 <!-- Imagen que ocupa todo el ancho y 30% del alto -->
                 <div class="w-full h-[60%] bg-contain bg-center bg-no-repeat"
                     style="background-image: url('https://marketplace.canva.com/EAGHdfPCdAY/3/0/1131w/canva-poster-festival-musica-neon-negro-IPiOfaP2QD8.jpg'); background-size: 100% 100%;">
@@ -108,7 +108,7 @@
                 <!-- Contenido con padding y alineación a la izquierda -->
                 <div class="p-4 flex-1">
                     <!-- Título del evento -->
-                    <h3 class="text-lg font-semibold text-gray-800">Título del Evento</h3>
+                    <h3 class="text-lg font-semibold text-gray-800">Festival de musica MusicWorld</h3>
             
                     <!-- Fecha del evento -->
                     <div class="flex items-center text-sm text-gray-600 mt-2">
@@ -117,22 +117,22 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5m7.5-1.5v1.5M3 9.75h18M4.5 6.75h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 21H4.5a2.25 2.25 0 0 1-2.25-2.25V9a2.25 2.25 0 0 1 2.25-2.25Z" />
                         </svg>
                         <!-- Texto de fecha -->
-                        <span>10 de diciembre, 2024</span>
+                        <span>15 de diciembre, 2024</span>
                     </div>
             
                     <!-- Descripción del evento -->
                     <p class="text-sm text-gray-700 mt-2">
-                        Breve descripción del evento. Este texto puede contener hasta dos líneas.
+                        El Festival de musica MusicWorld es un evento que reune a los mejores artistas del mundo, no te lo pierdas.
                     </p>
                 </div>
             
                 <!-- Botones en la parte inferior -->
                 <div class="p-4 flex justify-end space-x-4 border-t">
                     <button (click)="irADetallesEvento()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver Evento</button>
-                    <button class="text-blue-500 hover:underline">Recordatorio</button>
+                    <button (click)="openModal()" class="text-blue-500 hover:underline">Recordatorio</button>
                 </div>
             </div>
-            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden">
+            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden transform transition-all duration-300 hover:scale-105">
                 <!-- Imagen que ocupa todo el ancho y 30% del alto -->
                 <div class="w-full h-[60%] bg-contain bg-center bg-no-repeat"
                     style="background-image: url('https://www.la-razon.com/wp-content/uploads/2024/11/25/03/FERIA-NAVIDENA-AMUN.jpg'); background-size: 100% 100%;">
@@ -150,7 +150,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5m7.5-1.5v1.5M3 9.75h18M4.5 6.75h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 21H4.5a2.25 2.25 0 0 1-2.25-2.25V9a2.25 2.25 0 0 1 2.25-2.25Z" />
                         </svg>
                         <!-- Texto de fecha -->
-                        <span>10 de diciembre, 2024</span>
+                        <span>20 de diciembre, 2024</span>
                     </div>
             
                     <!-- Descripción del evento -->
@@ -162,10 +162,10 @@
                 <!-- Botones en la parte inferior -->
                 <div class="p-4 flex justify-end space-x-4 border-t">
                     <button (click)="irADetallesEventob()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver Evento</button>
-                    <button class="text-blue-500 hover:underline">Recordatorio</button>
+                    <button (click)="openModal()" class="text-blue-500 hover:underline">Recordatorio</button>
                 </div>
             </div>
-            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden">
+            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden transform transition-all duration-300 hover:scale-105">
                 <!-- Imagen que ocupa todo el ancho y 30% del alto -->
                 <div class="w-full h-[60%] bg-contain bg-center bg-no-repeat"
                     style="background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/copa-america-2024-bolivia-vs-panama-design-template-5c20021f7e23953674ff05a5e83bb419_screen.jpg?ts=1719864034'); background-size: 100% 100%;">
@@ -174,7 +174,7 @@
                 <!-- Contenido con padding y alineación a la izquierda -->
                 <div class="p-4 flex-1">
                     <!-- Título del evento -->
-                    <h3 class="text-lg font-semibold text-gray-800">Título del Evento</h3>
+                    <h3 class="text-lg font-semibold text-gray-800">Partido Bolivia vs Panama</h3>
             
                     <!-- Fecha del evento -->
                     <div class="flex items-center text-sm text-gray-600 mt-2">
@@ -183,22 +183,22 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5m7.5-1.5v1.5M3 9.75h18M4.5 6.75h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 21H4.5a2.25 2.25 0 0 1-2.25-2.25V9a2.25 2.25 0 0 1 2.25-2.25Z" />
                         </svg>
                         <!-- Texto de fecha -->
-                        <span>10 de diciembre, 2024</span>
+                        <span>17 de diciembre, 2024</span>
                     </div>
             
                     <!-- Descripción del evento -->
                     <p class="text-sm text-gray-700 mt-2">
-                        Breve descripción del evento. Este texto puede contener hasta dos líneas.
+                        Bolivia se enfrenta nuevamente a Panama, no te pierdas este emocionante partido.
                     </p>
                 </div>
             
                 <!-- Botones en la parte inferior -->
                 <div class="p-4 flex justify-end space-x-4 border-t">
                     <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver Evento</button>
-                    <button class="text-blue-500 hover:underline">Recordatorio</button>
+                    <button (click)="openModal()" class="text-blue-500 hover:underline">Recordatorio</button>
                 </div>
             </div>
-            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden">
+            <div class="bg-white shadow-md rounded-lg h-[550px] flex flex-col overflow-hidden transform transition-all duration-300 hover:scale-105">
                 <!-- Imagen que ocupa todo el ancho y 30% del alto -->
                 <div class="w-full h-[60%] bg-contain bg-center bg-no-repeat"
                     style="background-image: url('https://www.uao.edu.co/wp-content/uploads/2023/10/Ingenier%C3%ADa-11.png'); background-size: 100% 100%;">
@@ -216,7 +216,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5m7.5-1.5v1.5M3 9.75h18M4.5 6.75h15a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 19.5 21H4.5a2.25 2.25 0 0 1-2.25-2.25V9a2.25 2.25 0 0 1 2.25-2.25Z" />
                         </svg>
                         <!-- Texto de fecha -->
-                        <span>10 de diciembre, 2024</span>
+                        <span>24 de diciembre, 2024</span>
                     </div>
             
                     <!-- Descripción del evento -->
@@ -228,7 +228,7 @@
                 <!-- Botones en la parte inferior -->
                 <div class="p-4 flex justify-end space-x-4 border-t">
                     <button (click)="irADetallesEvento()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver Evento</button>
-                    <button class="text-blue-500 hover:underline">Recordatorio</button>
+                    <button (click)="openModal()" class="text-blue-500 hover:underline">Recordatorio</button>
                 </div>
             </div>
         </div>
@@ -265,3 +265,55 @@
         <button class="px-4 py-2 bg-gray-100 border border-gray-300 rounded-r hover:bg-gray-200">Next &gt;</button>
     </div>
 </div>
+
+<div *ngIf="isVisible" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-6 rounded-lg modal-content"> <!-- Modal más grande -->
+      <h3 class="text-2xl font-semibold text-center mb-4">Tu Calendario</h3>
+  
+      <!-- Card 1 (con animación hacia arriba) -->
+      <div class="bg-blue-500 text-white p-4 rounded-lg card card-transition-1">
+        <div class="flex justify-between items-center">
+          <div>
+            <span class="text-lg font-semibold">16 de diciembre, 2024 - 08:00 PM</span>
+          </div>
+          <div class="text-lg font-semibold">Maraton: Por una sonrisa</div>
+        </div>
+        <p class="mt-2 text-sm">
+          Este es un ejemplo de la descripción del evento, donde podrás ver todos los detalles.
+        </p>
+      </div>
+  
+      <!-- Card 2 (con animación desde la derecha) -->
+      <div class="bg-green-700 text-white p-4 rounded-lg card card-transition-2">
+        <div class="flex justify-between items-center">
+          <div>
+            <span class="text-lg font-semibold">20 de diciembre, 2024 - 09:00 AM</span>
+          </div>
+          <div class="text-lg font-semibold">Pycon 2024</div>
+        </div>
+        <p class="mt-2 text-sm">
+          Este es un ejemplo de la descripción del evento, donde podrás ver todos los detalles.
+        </p>
+      </div>
+  
+      <!-- Card 3 (con animación hacia abajo) -->
+      <div class="bg-blue-500 text-white p-4 rounded-lg card card-transition-3">
+        <div class="flex justify-between items-center">
+          <div>
+            <span class="text-lg font-semibold">25 de diciembre, 2024 - 10:00 PM</span>
+          </div>
+          <div class="text-lg font-semibold">Concierto en vivo grupo Frontera</div>
+        </div>
+        <p class="mt-2 text-sm">
+          Este es un ejemplo de la descripción del evento, donde podrás ver todos los detalles.
+        </p>
+      </div>
+  
+      <!-- Botón para cerrar el modal -->
+      <div class="flex justify-end mt-8">
+        <button (click)="closeModal()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Aceptar</button>
+      </div>
+    </div>
+  </div>
+  
+  

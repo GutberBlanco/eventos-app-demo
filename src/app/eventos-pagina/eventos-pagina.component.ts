@@ -56,4 +56,14 @@ export class EventosPaginaComponent implements AfterViewInit {
   irADetallesEventob() {
     this.router.navigate(['/detalles-evento-b']);
   }
+
+  isVisible = false;
+
+  openModal() {
+    this.isVisible = true;
+  }
+
+  closeModal() {
+    this.isVisible = false;
+  }
 }

@@ -6,3 +6,63 @@
   .carousel div {
     flex-shrink: 0; /* Las imágenes no se deben comprimir */
   }
+
+  .fixed {
+    position: fixed;
+  }
+  
+  .bg-opacity-50 {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+ /* Modal más grande */
+.modal-content {
+  width: 1100px; /* Modal agrandado */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Reducir aún más el margen entre los cards */
+.card {
+  margin-bottom: 0rem; /* Menor separación entre los cards */
+}
+
+/* Animaciones */
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px); /* Mover el primer card hacia arriba */
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px); /* Mover el tercer card hacia abajo */
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(100%); /* Iniciar fuera de la pantalla desde la derecha */
+  }
+  100% {
+    transform: translateX(0); /* Llegar a su posición */
+  }
+}
+
+.card-transition-1 {
+  animation: moveUp 1.5s ease-in-out forwards; /* Hacemos la animación más lenta */
+}
+
+.card-transition-2 {
+  animation: moveRight 1.5s ease-in-out forwards; /* Hacemos la animación más lenta */
+}
+
+.card-transition-3 {
+  animation: moveDown 1.5s ease-in-out forwards; /* Hacemos la animación más lenta */
+}
