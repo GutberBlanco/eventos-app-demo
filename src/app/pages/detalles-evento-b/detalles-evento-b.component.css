@@ -1,0 +1,40 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  img.col-span-2 {
+    grid-column: span 2;
+  }
+  .gallery img {
+    width: 100%;
+    height: 12rem; /* Ajusta según sea necesario */
+    object-fit: cover;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+
+  @keyframes draw-check {
+    0% {
+      stroke-dasharray: 0, 100;
+    }
+    100% {
+      stroke-dasharray: 100, 0;
+    }
+  }
+  
+  .animate-checkmark path {
+    stroke: #16a34a; /* color verde */
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 0, 100;
+    animation: draw-check 1s ease-out forwards;
+  }

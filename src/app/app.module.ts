@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { EventosPaginaComponent } from './eventos-pagina/eventos-pagina.component';
 import { DetallesEventoAComponent } from './pages/detalles-evento-a/detalles-evento-a.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { DetallesEventoBComponent } from './pages/detalles-evento-b/detalles-evento-b.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     NavbarComponent,
     EventosPaginaComponent,
     DetallesEventoAComponent,
-    CalendarComponent
+    CalendarComponent,
+    DetallesEventoBComponent
   ],
   imports: [
     BrowserModule,

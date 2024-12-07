@@ -53,4 +53,7 @@ export class EventosPaginaComponent implements AfterViewInit {
   irADetallesEvento() {
     this.router.navigate(['/detalles-evento-a']);
   }
+  irADetallesEventob() {
+    this.router.navigate(['/detalles-evento-b']);
+  }
 }
