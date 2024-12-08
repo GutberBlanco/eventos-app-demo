@@ -18,4 +18,13 @@ export class EventoService {
   crearEvento(evento: any): Observable<any> {
     return this.http.post(this.baseUrl, evento);
   }
+
+  filtrarEventosPorTipo(tipoEvento: string): Observable<any> {
+    const url = `${this.baseUrl}/tipo/${tipoEvento}`; // Endpoint para filtrar eventos
+    return this.http.get(url);
+  }
+  buscarEventoPorNombre(nombre: string): Observable<any> {
+    const url = `${this.baseUrl}/buscar?nombre=${encodeURIComponent(nombre)}`;
+    return this.http.get<any>(url);
+  }
 }

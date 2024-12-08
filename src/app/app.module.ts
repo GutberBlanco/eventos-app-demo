@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { EventosPaginaComponent } from './eventos-pagina/eventos-pagina.component';
 import { DetallesEventoAComponent } from './pages/detalles-evento-a/detalles-evento-a.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { FormsModule } from '@angular/forms';
 import { DetallesEventoBComponent } from './pages/detalles-evento-b/detalles-evento-b.component';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { DetallesEventoBComponent } from './pages/detalles-evento-b/detalles-eve
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
   ],
   providers: [],
